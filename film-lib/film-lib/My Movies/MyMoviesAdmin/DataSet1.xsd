@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="DataSet1" targetNamespace="http://www.tempuri.org/DataSet1.xsd" xmlns:mstns="http://www.tempuri.org/DataSet1.xsd" xmlns="http://www.tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="DataSet1" msdata:IsDataSet="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="Movie">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Category" type="xs:string" minOccurs="0" />
+              <xs:element name="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="DirID" type="xs:short" minOccurs="0" />
+              <xs:element name="Duration" type="xs:string" minOccurs="0" />
+              <xs:element name="MovID" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="MovTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="ProdID" type="xs:short" minOccurs="0" />
+              <xs:element name="ReleaseYear" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Video">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Format" type="xs:string" minOccurs="0" />
+              <xs:element name="MovID" type="xs:short" minOccurs="0" />
+              <xs:element name="Price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VideoID" msdata:AutoIncrement="true" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Actor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ActorID" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="Background" type="xs:string" minOccurs="0" />
+              <xs:element name="DOB" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Director">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BackGround" type="xs:string" minOccurs="0" />
+              <xs:element name="DirID" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="DOB" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Producer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="ProdID" msdata:AutoIncrement="true" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Movie" />
+      <xs:field xpath="mstns:MovID" />
+    </xs:unique>
+    <xs:unique name="Video_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Video" />
+      <xs:field xpath="mstns:VideoID" />
+    </xs:unique>
+    <xs:unique name="Actor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Actor" />
+      <xs:field xpath="mstns:ActorID" />
+    </xs:unique>
+    <xs:unique name="Director_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Director" />
+      <xs:field xpath="mstns:DirID" />
+    </xs:unique>
+    <xs:unique name="Producer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Producer" />
+      <xs:field xpath="mstns:ProdID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
